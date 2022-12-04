@@ -1,0 +1,59 @@
+<div *ngIf="!!offer; else loadingIndicator" class="theme-content">
+    <!-- theme-title  -->
+    <div class="theme-title">
+        <div class="theme-name-wrapper">
+            <div class="theme-name">
+                <h2>{{ offer.offerName}}</h2>
+                <p>Offer type: <span>{{offer.buyOrSell}}</span></p>
+                <p>Equipment type: <span>{{offer.cameraOrLens}}</span></p>
+                <img [src]="(offer.offerPhoto || '/assets/profile.png')" alt="default user">
+                <p>Contact: <span>{{offer.offerContact}}</span></p>
+                <p>Description: <span>{{offer.offerDescription}}</span></p>
+                <p>Date: <time> {{offer.created_at | date:'short'}}</time></p>
+                <p>Author: <span>{{offer.userId}}</span></p>
+            </div>
+            <div class="subscribers">
+                <p>Interested: <span>{{offer.interested.length}}</span></p>
+                <ng-container *ngIf="(isLoggedIn$ | async)">
+
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <!-- comment  -->
+    <div class="comment" *ngFor="let comment of offer.posts">
+        <header class="header">
+            <p><span>{{comment.userId.username}}</span> posted on <time>{{comment.created_at | date:'short'}}</time></p>
+        </header>
+        <div class="comment-main">
+            <div class="userdetails">
+                <img src="/assets/profile.png" alt="avatar">
+            </div>
+            <div class="post-content">
+                <p>{{comment.text}}</p>
+            </div>
+        </div>
+        <div class="footer">
+            <i *ngIf="(isLoggedIn$ | async) && canLike(comment)" class="fas fa-thumbs-up"></i>
+            <i *ngIf="(isLoggedIn$ | async) && !canLike(comment)" class="fas fa-thumbs-down"></i>
+            <p><span>{{comment.likes.length}}</span> likes</p>
+        </div>
+    </div>
+
+    <div *ngIf="(isLoggedIn$ | async)" class="answer-comment">
+        <p><span>currentUser</span> comment:</p>
+        <div class="answer">
+            <form>
+                <textarea name="postText" id="comment" cols="30" rows="10"></textarea>
+                <button>Post</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- <a routerLink="/themes/5fa64a9f2183ce1728ff371a">Angular 10</a> -->
+
+<ng-template #loadingIndicator>
+    Loading...
+</ng-template>

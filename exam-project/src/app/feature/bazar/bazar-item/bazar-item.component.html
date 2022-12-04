@@ -1,0 +1,25 @@
+<div class="photo-container">
+    <div class="theme-name-wrapper">
+      <div class="theme-name">
+        <a [routerLink]="['/offers', offer._id]"  class="normal">
+          <h2 *ngIf="offer.offerName.length > 25">{{(offer.offerName | slice:0:25) + '...' }}</h2>
+          <h2 *ngIf="offer.offerName.length <= 25">{{offer.offerName}}</h2>
+        </a>
+        <div class="columns">
+          <div>
+            <p>Offer type: <span>{{offer.buyOrSell}}</span></p>
+            <p>Equipment type: <span>{{offer.cameraOrLens}}</span></p>
+            <p>Contact: <span>{{offer.offerContact}}</span></p>
+            <p>Description: <span>{{offer.offerDescription}}</span></p>
+            <p>Date: <time>{{offer.created_at | date: 'yyyy-MM-dd hh:mm:ss'}}</time></p>
+            <div class="nick-name">
+              <p>Author: <span>{{offer.userId.username}}</span></p>
+            </div>
+          </div>
+          <div class="subscribers">
+            <p class="votes">Interested: <span>{{offer.interested.length}}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

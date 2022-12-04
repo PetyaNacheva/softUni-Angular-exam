@@ -1,0 +1,63 @@
+
+.photo-container {
+  padding: 20px;
+  min-width: 200px;
+  align-content: center;
+}
+
+img {
+  max-width: 340px;
+  align-content: center;
+  margin-left: auto;
+}
+
+
+.photo-container a {
+  text-decoration: none;
+  color: inherit;
+  align-content: center;
+}
+
+.photo-container span {
+  font-weight: bold;
+}
+
+.photo-container h2, p {
+  padding: 0.3em 0 0.2em;
+  margin: 0;
+}
+
+.theme-name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3em 0.5em;
+  border: 1px solid #999;
+  border-radius: 0.3em;
+  font-size: 0.8em;
+  margin-top: 1em;
+}
+
+.theme-title {
+  padding: 0;
+}
+
+.theme-name {
+  width: 100%;
+}
+
+.columns {
+  justify-content: space-between;
+  margin-top: 0.7rem;
+}
+
+.subscribers {
+  text-align: right;
+  flex-basis: 25%;
+  font-size: large;
+}
+
+
+time {
+  font-weight: bold;
+}

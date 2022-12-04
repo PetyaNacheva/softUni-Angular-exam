@@ -1,0 +1,24 @@
+<div class="photo-container">
+    <div class="theme-name-wrapper">
+      <div class="theme-name">
+        <a [routerLink]="['/photos', photo._id]" class="normal">
+          <h2 *ngIf="photo.photoTitle.length > 25">{{(photo.photoTitle | slice:0:25) + '...' }}</h2>
+          <h2 *ngIf="photo.photoTitle.length <= 25">{{photo.photoTitle}}</h2>
+        </a>
+        <div class="columns">
+          <div>
+            <img src={{photo.photoUrl}} alt="">
+            <p>EXIF: <span>{{photo.photoExif}}</span></p>
+            <p>Date: <time>{{photo.created_at | date: 'yyyy-MM-dd hh:mm:ss'}}</time></p>
+            <div class="nick-name">
+              <p>Author: <span>{{photo.userId.username}}</span></p>
+            </div>
+          </div>
+          <div class="subscribers">
+            <p class="votes">Votes: <span>{{photo.subscribers.length}}</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- <app-post-list [themeId]="theme._id"></app-post-list> -->
+    </div>
+  </div>

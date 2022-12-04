@@ -1,0 +1,12 @@
+<form >
+    <input [formControl]="searchControl" type="text" placeholder="Search for posts">
+
+  </form>
+  
+  <div *ngIf="offerList">
+    <app-bazar-item *ngFor="let offer of offerList" [offer]="offer"></app-bazar-item>
+    <div *ngIf="offerList.length === 0">No photos</div>
+  </div>
+  <div *ngIf="!offerList">
+    Loading...
+  </div>

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "angular-project-347318",
+  "private_key_id": "ad79d248c561b0243ab5828aa596945e984d779f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCiQcedFTWu8HCY\nUC/4KrLpXRQ/45aI8sj2U7TJtVjZzLX6K+LZRmo8xeIwqBw/S+jTeNBrUvDt84Z6\n7QzgVIqOrbSF2aiJJ+OR3tB5jLBVGjYhBmHkdZRtnqmHNBmQQNFBk9bPOZ2MA1fs\n23VIovbmLHqyE81B9P6mk9jSsRU/2kn5dL9eoDz4+WkVOm3WSN5KkcBR8+ucn2qA\nWvBhD7TMHzmCGmKOZRqGvQURzdfz1tMmGjXfs1ApUPoTzy1Ls4MEVGFnAhUBTZsl\nQiAyR7x5xC2PUFetJNdOCsHUzChhUAt9nTGxXHSdRg8upyX9Wy0rDTjFo9GgEuH+\nW2JdkXKjAgMBAAECggEAKZVqLxvscjU05hRG9vcaeyxbsDQHtHlkf5zcTIWpi8gn\nK0JsFPsy5vhgC9BJzP8LYIcqAxdyn8k1wfNWxXdlO0PRbCxoQR5z+EJ+c2hXGLhq\n/vO/yulHbQCoufnkQ1AZUREukFVXxzZkJlPoLwF0/XCQ0Wq5xBmh2dcyTm0L4R0M\nGeOAvPFU6KzBYzEIAgeFaN9Mfpa8ixnZHdqdp2NrnLthNfVGwCL5zCJrNp0/yNIw\nfe7PZxb3EgVbSNXWvT2P6NG/mIadvj0Pzb8huOVRCo/4y9zt9Qn0kvEgII5eD1N4\nYrz1G3wcSfp6TObXWt2Bz1vLZI1xPL4zv7vn+EgNoQKBgQDV3U3nTie3T3/nNqbU\nUl1ASWuc7n8EnQ0MLwuJEvmncdbUw3WF/dPTcFQMX1nlWBWlN+hh4kdcPjQPGdIS\n8XXwnyYK0uHFONrIxz5uqKrtxWTLnKWwbWQNiwWAd4UtvVVFe4InVIJmjlyAX4QC\nEjzM2pQoMBuY3Jr4PYCoFwWIpwKBgQDCOYs3aOb3RhK/JFjHYHHf9vTqyE7AEs0D\n6IMcaDl9OX96Xhhxqw/Qw6y3M/CHCABxaz+WFF7AQ7D8kALXHrtzct+QCSYhQJJP\nfU6CCz4oREzMJ57b5PmGEyqFMeRLdPNmn1Gbs3eYyX1l+IQyGQN6wsLqK2/eYJax\nomBPhQmJpQKBgAaLzZSk6cZMoqebHqQlGUGcfbTCABVOEVYsInhBom6jp2W/zdsa\nF9/C8m+mg4PnnFIAUhac7H5AUSudKLb3uRpyZKG0LsDwqpG2t4x/kSvR/PHWi6PI\n1WUsujBieCscPn3v993oUk19UguD4PCHSmEi16IbRtz4861hhIygl8TFAoGAGk+N\nSm5Ni4XUmEwmMqwgAQUFXKDR+jcRysu+pyR/VTVqzXrduNhBhjhbt12z4bb1yGeM\n75nG1CjXWv9vQxEIt7UCEBMNNUf4CgihkABR5UaLWMStQoCcRMtn4S9HC+nF50sB\n1SPUub/h2uR1lAvLat/jY7GKsAdJorqqbVtKVXkCgYBM4/46dY0bHwWCzVFm09TQ\ncpekszRohVh9cGmXrtXdz8y2b/Cn6luLRAqs42kXRSw2ZcIWm5LIEHgdSXtKOt6b\nhC9vFrvuHwLyUHVlbcbkid47DMU/yKhxcfv/e6b/VSVMKhcQoCEcGh08tsFmuO3i\nPOtJgHJNVWgpIFKZ2VLVrg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "angular-project-photos@angular-project-347318.iam.gserviceaccount.com",
+  "client_id": "112508049227580687920",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/angular-project-photos%40angular-project-347318.iam.gserviceaccount.com"
+}

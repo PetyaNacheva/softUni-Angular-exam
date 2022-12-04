@@ -1,0 +1,59 @@
+<div *ngIf="!!photo; else loadingIndicator" class="theme-content">
+    <!-- theme-title  -->
+    <div class="theme-title">
+        <div class="theme-name-wrapper">
+            <div class="theme-name">
+                <h2>{{ photo.photoTitle}}</h2>
+                <img src="{{photo.photoUrl}}" alt="">
+                <p>Genre: <span>{{photo.photoGenre}}</span></p>
+                <p>EXIF: <span>{{photo.photoExif}}</span></p>
+                <p>Date: <time> {{photo.created_at | date:'short'}}</time></p>
+                <p>Votes: <span>{{photo.subscribers.length}}</span></p>
+                <p>Author: <span>{{this.photo.username}}</span></p>
+            </div>
+            <div class="subscribers">
+                <ng-container *ngIf="(isLoggedIn$ | async)">
+                    <button  (click)="subscribe()" *ngIf="canSubscribe" class="subscribe">Vote</button>
+                    <button  (click)="unsubscribe()" *ngIf="!canSubscribe && !isUserOwner" class="unsubscribe">Remove vote</button>
+                    <button *ngIf="isUserOwner" (click)="deletePhoto()" class="unsubscribe">Delete photo</button>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <!-- comment  -->
+    <div class="comment" *ngFor="let comment of photo.posts">
+        <header class="header">
+            <p><span>{{comment.userId.username}}</span> posted on <time>{{comment.created_at | date:'short'}}</time></p>
+        </header>
+        <div class="comment-main">
+            <div class="userdetails">
+                <img src="/assets/profile.png" alt="avatar">
+            </div>
+            <div class="post-content">
+                <p>{{comment.text}}</p>
+            </div>
+        </div>
+        <div class="footer">
+            <i *ngIf="(isLoggedIn$ | async) && canLike(comment)" class="fas fa-thumbs-up"></i>
+            <i *ngIf="(isLoggedIn$ | async) && !canLike(comment)" class="fas fa-thumbs-down"></i>
+            <p><span>{{comment.likes.length}}</span> likes</p>
+        </div>
+    </div>
+
+    <div *ngIf="(isLoggedIn$ | async)" class="answer-comment">
+        <p><span>currentUser</span> comment:</p>
+        <div class="answer">
+            <form>
+                <textarea name="postText" id="comment" cols="30" rows="10"></textarea>
+                <button>Post</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- <a routerLink="/themes/5fa64a9f2183ce1728ff371a">Angular 10</a> -->
+
+<ng-template #loadingIndicator>
+    Loading...
+</ng-template>

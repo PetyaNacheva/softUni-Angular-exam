@@ -1,0 +1,72 @@
+<div class="new-photo-border">
+    <div class="header-background">
+        <span>Add new offer</span>
+    </div>
+    <form #addOfferForm="ngForm" (ngSubmit)="submitNewOffer(addOfferForm)">
+        <div class="new-photo-title">
+            <label for="offerName">Offer title:<span class="red">*</span></label>
+            <input #offerName="ngModel" ngModel type="text" name="offerName" id="offerName" required minlength="5">
+
+            <ng-container *ngIf="offerName.touched && offerName.invalid" >
+                <p *ngIf="offerName.errors.required" class="error">
+                    Photo title is required.
+                </p>
+                <p *ngIf="offerName.errors.minlength" class="error">
+                    Photo title must be at least 5 characters long.
+                </p>
+            </ng-container>
+
+        </div>
+        <div class="new-photo-genre">
+            <label for="buyOrSell">Buy or sell:<span class="red">*</span></label>
+            <select #buyOrSell="ngModel" ngModel name="buyOrSell" id="buyOrSell" required>
+                <option value="Sell">Sell</option>
+                <option value="Buy">Buy</option>
+            </select>
+            <ng-container *ngIf="buyOrSell.touched && buyOrSell.invalid">
+                <p *ngIf="buyOrSell.errors.required" class="error">
+                    Photo genre is required.
+                </p>
+            </ng-container>
+        </div>
+        <div class="new-photo-genre">
+            <label for="cameraOrLens">Type of equipment:<span class="red">*</span></label>
+            <select #cameraOrLens="ngModel" ngModel name="cameraOrLens" id="cameraOrLens" required>
+                <option value="Camera">Camera</option>
+                <option value="Lens">Lens</option>
+                <option value="Acccesories">Acccesories</option>
+            </select>
+            <ng-container *ngIf="cameraOrLens.touched && cameraOrLens.invalid">
+                <p *ngIf="cameraOrLens.errors.required" class="error">
+                    Photo genre is required.
+                </p>
+            </ng-container>
+        </div>
+        <div class="new-photo-genre">
+            <label for="offerPhoto">Upload photo:<span class="red">*</span></label>
+            <input #offerPhoto="ngModel" ngModel type="file" name="offerPhoto" accept="image/png" id="offerPhoto" (change)="handleOfferPhotoUpload($event)">
+        </div>
+        
+
+        <div class="new-photo-url">
+            <label for="offerContact">Contact:<span class="red">*</span></label>
+            <input #offerContact="ngModel"  ngModel type="text" name="offerContact" id="offerContact" required minlength="5">
+
+            <ng-container *ngIf="offerContact.touched && offerContact.invalid">
+                <p *ngIf="offerContact.errors.required" class="error">
+                    Photo URL is required.
+                </p>
+            </ng-container>
+        </div>
+        <div class="new-photo-exif">
+            <label for="offerDescription">Description:<span class="red"></span></label>
+            <textarea type="text" name="offerDescription" #offerDescription="ngModel" ngModel id="offerDescription" rows="5" class="height" ></textarea>
+        </div>
+
+        <div class="new-theme-buttons">
+            <button type="button"  class="cancel"  onchange="console.log(event.target.files)" (click)="navigateToHome()">Cancel</button>
+            <button  class="public">Publish</button>
+        </div>
+
+    </form>
+</div> 

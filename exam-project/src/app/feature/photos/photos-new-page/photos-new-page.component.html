@@ -1,0 +1,55 @@
+<div class="new-photo-border">
+    <div class="header-background">
+        <span>Add new photo</span>
+    </div>
+    <form #addphotoForm="ngForm" (ngSubmit)="submitNewPhoto(addphotoForm)">
+        <div class="new-photo-title">
+            <label for="photoTitle">Title <span class="red">*</span></label>
+            <input #photoTitle="ngModel" ngModel type="text" name="photoTitle" id="photoTitle" required minlength="5">
+
+            <ng-container *ngIf="photoTitle.touched && photoTitle.invalid" >
+                <p *ngIf="photoTitle.errors.required" class="error">
+                    Photo title is required.
+                </p>
+                <p *ngIf="photoTitle.errors.minlength" class="error">
+                    Photo title must be at least 5 characters long.
+                </p>
+            </ng-container>
+
+        </div>
+        <div class="new-photo-url">
+            <label for="photoUrl">URL <span class="red">*</span></label>
+            <input #photoUrl="ngModel"  ngModel type="text" name="photoUrl" id="photoUrl" required minlength="5">
+
+            <ng-container *ngIf="photoUrl.touched && photoUrl.invalid">
+                <p *ngIf="photoUrl.errors.required" class="error">
+                    Photo URL is required.
+                </p>
+            </ng-container>
+        </div>
+        <div class="new-photo-genre">
+            <label for="photoGenre">Genre <span class="red">*</span></label>
+            <select #photoGenre="ngModel" ngModel name="photoGenre" id="photoGenre" required>
+                <option value="Nature">Nature</option>
+                <option value="Portrait">Portrait</option>
+                <option value="Sport">Sport</option>
+                <option value="Concert">Concert</option>
+            </select>
+            <ng-container *ngIf="photoGenre.touched && photoGenre.invalid">
+                <p *ngIf="photoGenre.errors.required" class="error">
+                    Photo genre is required.
+                </p>
+            </ng-container>
+        </div>
+        <div class="new-photo-exif">
+            <label for="photoExif">EXIF information <span class="red"></span></label>
+            <textarea type="text" name="photoExif" #photoExif="ngModel" ngModel id="photoExif" rows="5" class="height" ></textarea>
+
+        </div>
+        <div class="new-theme-buttons">
+            <button type="button" (click)="navigateToHome()"  class="cancel">Cancel</button>
+            <button  class="public">Publish</button>
+        </div>
+
+    </form>
+</div>
