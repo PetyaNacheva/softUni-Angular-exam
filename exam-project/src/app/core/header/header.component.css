@@ -1,7 +1,7 @@
 /* header  */
 
 header {
-  background: rgb(13, 109, 104);
+  background: rgb(22, 43, 42);  
   ;
 }
 
@@ -39,6 +39,11 @@ header a {
 
 nav {
   border-top: 1px solid #383838;
+  
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {

@@ -16,9 +16,11 @@
             <p *ngIf="registerFormGroup.controls['username'].errors.required" class="error">
                 Username is required!
             </p>
-
             <p *ngIf="registerFormGroup.controls['username'].errors.minlength" class="error">
                 Username must be at least 5 characters!
+            </p>
+            <p *ngIf="registerFormGroup.controls['username'].errors.username" class="error">
+                Username is not valid!
             </p>
         </ng-container>
 

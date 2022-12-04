@@ -3,15 +3,11 @@ import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from "@angu
 export function emailValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value;
 
-    // if (control.errors && Object.keys(control.errors).filter(errorName => errorName !== 'email').length > 0) {
-    //     return null;
-    // }
-
     if (!value) {
         return null
     }
 
-    if (!/.{6,}@gmail\.(bg|com)/.test(value)) {
+    if (!/.{4,}@[a-z]{3,}\.(bg|com)/.test(value)) {
         return {
             email: true,
         }
@@ -49,4 +45,17 @@ export function passwordMatch2(passwordFormControl: AbstractControl): Validation
     }
 
     return null;
+}
+
+export function nameValidator(control: AbstractControl): ValidationErrors | null{
+    const name = control.value;
+
+    if (!/\s{1,}/.test(name)) {
+        return null;
+    }
+    return {
+        username: true,
+    }
+    return null;
+
 }

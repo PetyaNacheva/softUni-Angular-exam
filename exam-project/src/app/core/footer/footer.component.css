@@ -1,24 +1,23 @@
 
 footer {
-  background: rgb(13, 109, 104);  
+  background: rgb(22, 43, 42);  
   margin-top: 5px; 
-  padding-top: 5px;
-  padding-bottom: 5px;
+
 
 }
 
 footer ul {
   padding: 0;
   display: flex;
-  align-items: center;
+  justify-content:center;
   width: 50%;
   margin: auto;
 } 
 
 footer li {
   list-style: none;
-  margin: .45em;
-  padding: 0.95em;
+  margin: 10px;
+  padding: 5px;
 }
 
  li {

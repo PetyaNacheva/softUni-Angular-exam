@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 import { CreateUserDto, UserService } from 'src/app/core/user.service';
-import { emailValidator, passwordMatch, passwordMatch2 } from '../util';
+import { emailValidator, nameValidator, passwordMatch, passwordMatch2 } from '../util';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerFormGroup: FormGroup = this.formBuilder.group({
-    'username': new FormControl(null, [Validators.required, Validators.minLength(5)]),
+    'username': new FormControl(null, [Validators.required, Validators.minLength(5), nameValidator]),
     'email': new FormControl(null, [Validators.required, emailValidator]),
     'passwords': new FormGroup({
       'password': this.passwordControl,
