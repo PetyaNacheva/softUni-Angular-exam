@@ -1,18 +1,21 @@
 /* welcome component */
 
 .welcome {
+    
     padding: 0.3em 0.5em;
     border: 1px solid #999;
     border-radius: 0.3em;
     font-size: 0.8em;
-    margin-top: 1em;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .welcome h3 {
     background-color: rgb(13, 109, 104);
     color: white;
     border-radius: 0.3em;
-    width: 97%;
+    width: 90%;
+    margin: auto;
     padding: 0.3em 1em;
 }
 
@@ -45,4 +48,7 @@
 
 .welcome li {
     list-style: none;
+}
+img{
+    width: 600px;
 }

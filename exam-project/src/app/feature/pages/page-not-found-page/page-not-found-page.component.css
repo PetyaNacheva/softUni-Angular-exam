@@ -4,7 +4,13 @@
     width: 550px;
     position: relative;
   }
-  
+  img{
+    width: 500px;
+    margin-top: 60px;
+  }
+  p{
+    text-align: center;
+  }
     .err {
       color: #14775e;
       font-family: 'Nunito Sans', sans-serif;
@@ -22,18 +28,7 @@
     color: #14775e;
   }
   
-
-  
-  .msg {
-      text-align: center;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 1.6rem;
-      position:absolute;
-      left: 16%;
-      top: 45%;
-      width: 75%;
-    }
-  
+ 
   a {
     text-decoration: none;
     color: #14775e;

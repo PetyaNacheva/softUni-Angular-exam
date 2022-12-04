@@ -24,7 +24,7 @@ const routes: Routes = [
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
     },
     {
-        path: 'photos',
+        path: 'movies',
         canActivate: [AuthGuard],
         loadChildren: () => import('./feature/photos/photos.module').then(m => m.PhotosModule)
     },
