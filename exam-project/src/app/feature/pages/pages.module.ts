@@ -6,6 +6,7 @@ import { PageNotFoundPageComponent } from './page-not-found-page/page-not-found-
 import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 
+
 @NgModule({
   declarations: [
     HomePageComponent,
@@ -15,7 +16,9 @@ import { AboutComponent } from './about/about.component';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+   
+    
   ]
 })
 export class PagesModule { }

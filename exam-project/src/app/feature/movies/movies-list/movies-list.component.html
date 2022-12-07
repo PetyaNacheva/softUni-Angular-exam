@@ -1,0 +1,26 @@
+<form class="form">
+    <div class="parent">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Search by recipe name</mat-label>
+            <input [formControl]="searchControl" type="text" matInput name="recipeName" id="recipeName"
+                placeholder="long island">
+        </mat-form-field>
+        <button class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+<div *ngIf="movieList && movieList.length !== 0" id="portfolio-content" class="center-text">
+    <h3>Latest Recipes:</h3>
+    <div class="portfolio-page" id="page-1">
+        <app-recipes-list-item *ngFor="let recipe of movieList" [recipe]="recipe"></app-recipes-list-item>
+    </div>
+</div>
+
+<div *ngIf="movieList && movieList.length === 0" id="portfolio-content" class="center-text">
+    <h3 class="portfolio-page" id="page-1">No Recipes Found!</h3>
+</div>
+
+<div *ngIf="!movieList">
+    Loading&hellip;
+</div>

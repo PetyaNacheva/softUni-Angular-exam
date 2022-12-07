@@ -7,7 +7,7 @@ const offerModel = require('./offerModel')
 module.exports = {
     userModel,
     tokenBlacklistModel,
-    postModel,
-    photoModel,
-    offerModel
+    // postModel,
+    // photoModel,
+    // offerModel
 }

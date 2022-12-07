@@ -1,0 +1,28 @@
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ebf5fe;
+    padding-top: 20px;
+    border-radius: 35px 150px;
+    padding-bottom: 20px;
+  }
+  
+  .addnew{
+    margin-top: 60px;
+    padding-bottom: 100px;
+  }
+  
+  h2{
+    padding-bottom: 35px;
+    color: #104c88;
+  }
+  
+  mat-form-field{
+    width: 40%;
+  }
+  
+  button{
+    width: 150px;
+  }

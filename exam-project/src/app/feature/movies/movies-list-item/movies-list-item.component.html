@@ -1,0 +1,15 @@
+<div class="portfolio-group">
+    <a class="portfolio-item" [routerLink]="['/movies', movie._id]">
+        <img src="{{movie.poster}}" alt="image">
+        <div class="detail">
+            <h3>{{movie.title}}</h3>
+            <!-- TODO: Use pipe for description -->
+            <!-- <p>{{(recipe.description | slice:0:25)}}...</p> -->
+            <p><strong><i class="fa fa-thumbs-up icons"></i> Likes: </strong> {{movie.likes.length}}</p>
+            <p><strong><i class="far fa-comment icons"></i> Comments: </strong> {{movie.comments.length}}</p>
+            <p><strong><i class="fas fa-user icons"></i> Author: </strong> {{movie.userId.username}}</p>
+
+            <button class="btn" >Details</button>
+        </div>
+    </a>
+</div>

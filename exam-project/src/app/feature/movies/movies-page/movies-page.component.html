@@ -1,0 +1,6 @@
+<main>
+    <div *ngIf="!(isLoggedIn$ | async)" class="container">
+        <app-welcome></app-welcome>
+    </div>
+    <app-movies-list></app-movies-list>
+</main>

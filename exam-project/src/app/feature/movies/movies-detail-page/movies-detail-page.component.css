@@ -1,0 +1,48 @@
+.templatemo-detail{
+    background-color: #EBF5FE;
+    /* width: 80%; */
+    margin: auto;
+}
+
+.about-detail{
+    padding: 20px 40px;
+}
+
+h1{
+    color: #104C88;
+    font-weight: bold;
+}
+
+.justify{
+    padding-top: 20px;
+    height: auto;
+}
+
+.subtitle{
+    color: #104C88;
+}
+
+.right{
+    font-style: italic;
+}
+
+button{
+    margin: 0 5px;
+}
+
+.buttons {
+    display: -webkit-inline-box;
+}
+
+.btnlike {
+    padding-right: 12px;
+}
+
+.icons {
+    color: #0A335B ;
+}
+
+.hint {
+    margin: auto;
+    color: #4E749B;
+}

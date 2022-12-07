@@ -1,0 +1,51 @@
+<ng-container *ngIf="makeUpdate">
+    <app-movies-new-page [makeUpdate]="makeUpdate" [movieToUpdate]="movie"></app-movies-new-page>
+</ng-container>
+
+<ng-container *ngIf="!makeUpdate">
+    <div class="templatemo-detail content" *ngIf="movie">
+
+        <div class="about-detail">
+            <h1>{{movie.title}}</h1>
+            <p class="right date"><i class="fa fa-calendar icons"></i> date: {{movie.created_at | date:'medium'}}</p>
+            <br>
+
+            <img src="{{movie.poster}}" alt="image" class="left shadow">
+            <p class="justify">{{movie.shortStory}}</p>
+
+            <br>
+            <p class="right"><i class="fas fa-user icons"></i> author: {{movie.userId.username}}</p>
+            <br>
+
+            <h2 class="subtitle">
+                <i class="fa fa-solid fa-list fa-sm icons"></i>
+                Ingredients:
+            </h2>
+            <!-- <ul class="checkmark pad-left" *ngFor="let ingr of movie.ingredients">
+                <li>{{ingr}}</li>
+            </ul> -->
+
+            <div class="buttons">
+                <div class="btnlike">
+                    <i class="fa fa-thumbs-up fa-lg icons"></i>{{movie.likes.length}}
+                </div>
+                <ng-container *ngIf="(isLoggedIn$ | async)">
+                    <div *ngIf="isUserAuthor">
+                        <button (click)="updateMovie()" class="btn btn-primary">Edit</button>
+                        <button (click)="deleteMovieHandler()" class="btn btn-outline-primary">Delete</button>
+                    </div>
+                    <div *ngIf="!isUserAuthor">
+                        <button [disabled]="!canLike" (click)="likeMovie()" class="btn btn-primary">Like</button>
+                        <button [disabled]="canLike" (click)="dislikeMovie()"
+                            class="btn btn-outline-primary">Dislike</button>
+                    </div>
+                    <div *ngIf="!canLike" class="hint">
+                        You already liked it! But you can dislike it.
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <app-movies-new-comment [movieId]="movie._id" [movie]="movie"></app-movies-new-comment>
+</ng-container>

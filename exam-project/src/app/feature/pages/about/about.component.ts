@@ -9,6 +9,11 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
 
+  
+  lat = 42.14911303776741;
+  lng = 24.74857873466809;
+
+
   ngOnInit(): void {
   }
 

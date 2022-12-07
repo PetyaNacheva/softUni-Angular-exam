@@ -2,15 +2,16 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { PostService } from './post.service';
+
 import { storageServiceProvider } from './storage.service';
 import { UserService } from './user.service';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { ErrorHandlerInterceptor } from './error-handler.interceptor';
-import { PhotoService } from './photo.service';
-import { OfferService } from './offer.service';
+
+import { CommentService } from './comment.service';
+import { MovieService } from './movie.service';
 
 @NgModule({
   declarations: [
@@ -33,10 +34,9 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         UserService,
-        PhotoService,
-        OfferService,
+        MovieService,
+        CommentService,
         storageServiceProvider,
-        PostService,
         {
           provide: HTTP_INTERCEPTORS,
           multi: true,

@@ -1,0 +1,26 @@
+h3 {
+    /* padding: 0; */
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #104C88;
+}
+
+p {
+    margin-bottom: 0.5rem;
+    color: #104C88;
+}
+
+strong {
+    color: #FF8E00;
+}
+
+button {
+    margin-top: 0.5rem;
+    color:  #0a335b;
+    padding: 0px;
+    text-transform: uppercase;
+}
+
+.icons {
+    color:  #104C88;
+}

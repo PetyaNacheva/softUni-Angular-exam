@@ -1,0 +1,82 @@
+<form class="addnew" [formGroup]="movieFormGroup" (ngSubmit)="handleCreateMovie()">
+    <div class="parent">
+        <h2>{{formName}}</h2>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Movie Name</mat-label>
+            <input formControlName="movieName" type="text" matInput name="movieName" id="movieName"
+                placeholder="Basic Omelette" >
+
+            <mat-error
+                *ngIf="movieFormGroup.controls['movieName'].touched && movieFormGroup.controls['movieName'].invalid">
+                Movie Name
+                <strong *ngIf="movieFormGroup.controls['movieName'].hasError('required')">
+                    is required!
+                </strong>
+                <strong
+                    *ngIf="!movieFormGroup.controls['movieName'].hasError('required') && movieFormGroup.controls['movieName'].hasError('minlength')">
+                    must be at least 3 characters!
+                </strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Image Link</mat-label>
+            <input formControlName="imgUrl" type="text" matInput name="imgUrl" id="imgUrl" placeholder="https://...">
+
+            <mat-error *ngIf="movieFormGroup.controls['imgUrl'].touched && movieFormGroup.controls['imgUrl'].invalid">
+                Image Link
+                <strong *ngIf="movieFormGroup.controls['imgUrl'].hasError('required')">
+                    is required!
+                </strong>
+                <strong
+                    *ngIf="!movieFormGroup.controls['imgUrl'].hasError('required') && movieFormGroup.controls['imgUrl'].hasError('urlV')">
+                    must be a valid address!
+                </strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea formControlName="description" type="text" matInput name="description" id="description"
+                placeholder="Basic Omelette">
+            </textarea>
+            <mat-error
+                *ngIf="movieFormGroup.controls['description'].touched && movieFormGroup.controls['description'].invalid">
+                Description
+                <strong *ngIf="movieFormGroup.controls['description'].hasError('required')">
+                    is required!
+                </strong>
+                <strong
+                    *ngIf="!movieFormGroup.controls['description'].hasError('required') && movieFormGroup.controls['description'].hasError('minlength')">
+                    must be at least 10 characters!
+                </strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Ingredients</mat-label>
+            <textarea formControlName="ingredients" type="text" matInput name="ingredients" id="ingredients"
+                placeholder="ice, 1 lemon, whiskey 50ml, ...">
+            </textarea>
+            <mat-error
+                *ngIf="movieFormGroup.controls['ingredients'].touched && movieFormGroup.controls['ingredients'].invalid">
+                Ingredients
+                <strong *ngIf="movieFormGroup.controls['ingredients'].hasError('required')">
+                    is required!
+                </strong>
+                <strong
+                    *ngIf="!movieFormGroup.controls['ingredients'].hasError('required') && movieFormGroup.controls['ingredients'].hasError('ingredients')">
+                    must be valid! Write ingredients separated with comma and new line!
+                </strong>
+                <strong
+                    *ngIf="!movieFormGroup.controls['ingredients'].hasError('required') && movieFormGroup.controls['ingredients'].hasError('ingredientsLength')">
+                    must be at least two!
+                </strong>
+            </mat-error>
+        </mat-form-field>
+
+        <button [disabled]="movieFormGroup.invalid || movieFormGroup.untouched" class="btn btn-primary">{{formBtnName}}</button>
+
+    </div>
+</form>
