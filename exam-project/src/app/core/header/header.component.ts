@@ -60,6 +60,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
       complete: () => {
         this.isLoggingOut = false;
         this.router.navigate(['/home']);
+        this.messageBus.notifyForMessage({
+          text: 'User logged out!',
+          type: MessageType.Success
+        })
       },
       error: () => {
         this.isLoggingOut = false;

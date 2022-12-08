@@ -14,7 +14,7 @@ import { MovieService } from 'src/app/core/movie.service';
 export class MoviesNewPageComponent implements OnInit {
 
   @Input() makeUpdate: boolean;
-  @Input() recipeToUpdate: IMovie;
+  @Input() movieToUpdate: IMovie;
 
   formName: string;
   formBtnName: string;
@@ -65,7 +65,7 @@ export class MoviesNewPageComponent implements OnInit {
       // console.log('update');
       // console.log(this.recipeFormGroup.value);
 
-      this.movieService.updateMovie$(this.recipeToUpdate._id, this.movieFormGroup.value).subscribe({
+      this.movieService.updateMovie$(this.movieToUpdate._id, this.movieFormGroup.value).subscribe({
         next: movie => {
           // console.log(recipe._id);
           this.router.navigateByUrl(`/RefreshComponent`, { skipLocationChange: true }).then(() => {

@@ -23,6 +23,10 @@
         </li>
       </ul>
     </div>
+    <p *ngIf="message" [ngClass]="{'error-message' : isMessageError, 'success-message' : !isMessageError}"
+    class="notification">
+    {{message}}
+  </p>
   </div>
   <nav>
     <ul>
@@ -30,12 +34,12 @@
         <a routerLink="/home">Home</a>
       </li>
       <li>
-        <a routerLink="/photos">Photos</a>
+        <a routerLink="/movies">Movies</a>
       </li>
       <li>
-          <a routerLink="/photos/new">Add photograph</a>
+          <a routerLink="/movies/new">Add movie</a>
         </li>
-      <li>
+      <!-- <li>
         <a routerLink="/top-photos">Top rated</a>
       </li>
       <li>
@@ -43,14 +47,14 @@
       </li>
       <li>
         <a routerLink="/add-offer">Add offer</a>
-      </li>
+      </li> -->
       <li>
           <a routerLink="/about">About us</a>
       </li>
 
-      <p *ngIf="!!message" [ngClass]="{'error-message': isMessageError, 'success-message': !isMessageError}" class="notification">
+      <!-- <p *ngIf="!!message" [ngClass]="{'error-message': isMessageError, 'success-message': !isMessageError}" class="notification">
         
-      </p>
+      </p> -->
     </ul>
   </nav>
 </header>

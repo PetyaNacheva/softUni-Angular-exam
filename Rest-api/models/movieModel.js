@@ -20,10 +20,10 @@ const schema = new Schema({
         type: String,
         required: true,
     },
-    poster: [{
+    poster: {
         type: String,
 
-    }],
+    },
   
     actors: [{
         type: String,

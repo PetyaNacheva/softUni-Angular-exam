@@ -7,7 +7,8 @@ import { IMovie } from './interfaces';
 const apiUrl = environment.apiUrl;
 
 export interface CreateMovieDto {
-//   recipeName: string, ingredients: string[], description: string
+  
+  title: string, director: string, genre: string, releaseDate: string, poster: string, actors: string[], shortStory: string
 }
 
 @Injectable()
