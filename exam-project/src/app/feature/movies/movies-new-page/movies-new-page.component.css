@@ -7,22 +7,38 @@
     padding-top: 20px;
     border-radius: 35px 150px;
     padding-bottom: 20px;
+    width: 700px;
   }
   
   .addnew{
     margin-top: 60px;
-    padding-bottom: 100px;
+    
   }
   
   h2{
     padding-bottom: 35px;
-    color: #104c88;
+    color:  rgb(47, 102, 99); ;
   }
   
   mat-form-field{
-    width: 40%;
+    width: 60%;
+    align-items: center;
+    
   }
+
+input{
+  padding: 5px;
+
+}
   
   button{
     width: 150px;
   }
+
+
+  .error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+}

@@ -33,5 +33,46 @@
                 <button   [disabled]="editProfileForm.invalid" class="green-button">Save</button>
             </form>
         </ng-container>
+
+        <ng-container *ngIf="isShowMovies">
+            <h4>My Movies:</h4>
+    
+            <div *ngIf="userMovies.length == 0">
+                <p class="emptyarray"><strong> You don't have any movies </strong></p>
+            </div>
+    
+            <div [@.disabled]="isDisabled">
+                <div class="pb-5" [@itemAnimation]="userMovies.length">
+                    <div *ngFor="let movie of userMovies">
+                        <div class="container mt-2">
+                            <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                <div class="d-flex flex-column"> <span class="articles">Movie:</span> <span
+                                        class="number1">{{movie.title}}</span> </div>
+                                <div class="d-flex flex-column mt-1"> <button class="btn btn-sm btn-outline-primary"
+                                        [routerLink]="['/movies', movie._id]">Details</button> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="isLikedShow">
+            <h4>Liked Movies:</h4>
+            <div [@.disabled]="isDisabled">
+                <div class="pb-5" [@itemAnimation]="userMovies.length">
+                    <div *ngFor="let movie of likedMovies">
+                        <div class="container mt-2">
+                            <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                <div class="d-flex flex-column"> <span class="articles">Movie:</span> <span
+                                        class="number1">{{movie.title}}</span> </div>
+                                <div class="d-flex flex-column mt-1"> <button class="btn btn-sm btn-outline-primary"
+                                        [routerLink]="['/movies', movie._id]">Details</button> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
     </ng-container>
 </div>

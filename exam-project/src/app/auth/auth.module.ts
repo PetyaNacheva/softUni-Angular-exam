@@ -4,6 +4,10 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthRoutingModule } from './auth-routing.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailValidatorDirective } from './email-validator.directive';
 import { StoreModule } from '@ngrx/store';
@@ -21,6 +25,10 @@ import { ProfileEffects } from './+store/profile.effects';
   imports: [
     CommonModule,
     AuthRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forFeature<IAuthState>('auth', {

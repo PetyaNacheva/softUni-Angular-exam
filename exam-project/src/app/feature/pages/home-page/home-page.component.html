@@ -2,7 +2,7 @@
     <app-welcome></app-welcome>
 </div>
 
-<h3>Most Liked Recipe:</h3>
+<h3>Most Liked Movie:</h3>
 
 <div class="card-container" *ngIf="movieMostLiked">
     <div class="card u-clearfix">
@@ -15,13 +15,13 @@
                 <p class="card-description subtle"><i class="fa fa-thumbs-up icons"></i> Likes:
                     {{movieMostLiked.likes.length}}</p>
             </div>
-            <div class="card-read" [routerLink]="['/recipes', movieMostLiked._id]">Details</div>
+            <div class="card-read" [routerLink]="['/movies', movieMostLiked._id]">Details</div>
         </div>
         <img src="{{movieMostLiked.poster}}" alt="image" class="card-media" />
     </div>
 </div>
 
-<h3>Most Commented Recipe:</h3>
+<h3>Most Commented Movie:</h3>
 
 <div class="card-container" *ngIf="movieMostCommented">
     <div class="card u-clearfix">
@@ -34,7 +34,7 @@
                 <p class="card-description subtle"><i class="fa fa-thumbs-up icons"></i> Comments:
                     {{movieMostCommented.comments.length}}</p>
             </div>
-            <div class="card-read" [routerLink]="['/recipes', movieMostCommented._id]">Details</div>
+            <div class="card-read" [routerLink]="['/movies', movieMostCommented._id]">Details</div>
         </div>
         <img src="{{movieMostCommented.poster}}" alt="image" class="card-media" />
     </div>

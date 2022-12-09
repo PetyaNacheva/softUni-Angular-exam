@@ -25,20 +25,6 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         loadChildren: () => import('./feature/movies/movies.module').then(m => m.MoviesModule)
     },
-    // {
-    //     path: 'offers',
-    //     canActivate: [AuthGuard],
-    //     // component: BazarPageComponent
-    // },
-    // {
-    //     path: 'add-offer',
-    //     canActivate: [AuthGuard],
-    //     // component: BazarNewOfferComponent
-    // },
-    // {
-    //     path: 'top-photos',
-    //     // component: PhotosTopPageComponent
-    // },
     {
         path: 'about',
         component: AboutComponent

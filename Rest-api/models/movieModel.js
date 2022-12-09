@@ -1,7 +1,7 @@
-const { default: mongoose } = require('mongoose');
-const { model, Schema, Types: { ObjectId }  } =  require('mongoose');
+const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Schema.Types;
 
-const schema = new Schema({
+const movieSchema = new mongoose.Schema({
     title: {
         type: String,
         required: [true, 'Name is required'],
@@ -48,6 +48,6 @@ const schema = new Schema({
     
 }, { timestamps: { createdAt: 'created_at' } });
 
-module.exports = mongoose.model('Movie', schema);
+module.exports = mongoose.model('Movie', movieSchema);
 
 // module.exports = mongoose.model('Movie', movieSchema);

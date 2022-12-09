@@ -20,7 +20,6 @@ router.delete('/:movieId', auth(), movieController.deleteMovie);
 router.get('/:movieId/comments', movieController.getCommentsOfMovie);
 router.post('/:movieId/comments/:commentId/like', auth(), commentController.likeComment);
 router.post('/:movieId/comments/:commentId/dislike', auth(), commentController.dislikeComment);
-// router.put('/:recipeId/comments/:commentId', auth(), commentController.editComment);
-// router.delete('/:recipeId/comments/:commentId', auth(), commentController.deleteComment);
+
 
 module.exports = router;

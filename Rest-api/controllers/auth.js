@@ -5,7 +5,7 @@ const {
 
 const utils = require('../utils');
 const { authCookieName } = require('../app-config');
-const { uploadFile } = require('../utils/disk');
+// const { uploadFile } = require('../utils/disk');
 
 const bsonToJson = (data) => { return JSON.parse(JSON.stringify(data)) };
 const removePassword = (data) => {

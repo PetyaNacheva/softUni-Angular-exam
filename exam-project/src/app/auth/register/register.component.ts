@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 import { CreateUserDto, UserService } from 'src/app/core/user.service';
+import { MessageBusService, MessageType } from 'src/app/core/message-bus.service';
 import { emailValidator, nameValidator, passwordMatch, passwordMatch2 } from '../util';
 
 @Component({
@@ -12,6 +13,7 @@ import { emailValidator, nameValidator, passwordMatch, passwordMatch2 } from '..
 })
 export class RegisterComponent implements OnInit {
 
+  errorMessage: string = '';
   passwordControl = new FormControl(null, [Validators.required, Validators.minLength(5)]);
 
   get passwordsGroup(): FormGroup {
@@ -28,7 +30,7 @@ export class RegisterComponent implements OnInit {
 
   })
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router,   private messageBus: MessageBusService) { }
 
   ngOnInit(): void {
   }
@@ -47,9 +49,23 @@ export class RegisterComponent implements OnInit {
       // ...(tel && { tel: telRegion + tel})
     }
 
+    this.authService.register$(body).subscribe({
+      next: user => {
+        this.router.navigate(['/home']);
 
-    this.authService.register$(body).subscribe(() => {
-      this.router.navigate(['/home']);
+        this.messageBus.notifyForMessage({
+          text: 'User successfully register!',
+          type: MessageType.Success
+        })
+      },
+      complete: () => {
+        // console.log('register stream completed');
+      },
+      error: (err) => {
+        // console.log('Error is ', err.error.message)
+        this.errorMessage = err.error.message;
+      }
     })
+
   }
 }

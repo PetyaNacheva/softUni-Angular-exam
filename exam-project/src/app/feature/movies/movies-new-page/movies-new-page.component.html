@@ -4,73 +4,115 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Movie Name</mat-label>
-            <input formControlName="movieName" type="text" matInput name="movieName" id="movieName"
-                placeholder="Basic Omelette" >
+            <input formControlName="title" type="text" matInput name="title" id="title"
+                placeholder="Final Destination" >
 
             <mat-error
-                *ngIf="movieFormGroup.controls['movieName'].touched && movieFormGroup.controls['movieName'].invalid">
+                *ngIf="movieFormGroup.controls['title'].touched && movieFormGroup.controls['title'].invalid" class="error">
                 Movie Name
-                <strong *ngIf="movieFormGroup.controls['movieName'].hasError('required')">
+                <strong *ngIf="movieFormGroup.controls['title'].hasError('required')" class="error">
                     is required!
                 </strong>
                 <strong
-                    *ngIf="!movieFormGroup.controls['movieName'].hasError('required') && movieFormGroup.controls['movieName'].hasError('minlength')">
+                    *ngIf="!movieFormGroup.controls['title'].hasError('required') && movieFormGroup.controls['title'].hasError('minlength')" class="error">
                     must be at least 3 characters!
                 </strong>
             </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <mat-label>Image Link</mat-label>
-            <input formControlName="imgUrl" type="text" matInput name="imgUrl" id="imgUrl" placeholder="https://...">
+            <mat-label>Movie Director</mat-label>
+            <input formControlName="director" type="text" matInput name="director" id="director"
+                placeholder="..." >
 
-            <mat-error *ngIf="movieFormGroup.controls['imgUrl'].touched && movieFormGroup.controls['imgUrl'].invalid">
+            <mat-error
+                *ngIf="movieFormGroup.controls['director'].touched && movieFormGroup.controls['director'].invalid" class="error">
+                Movie Director
+                <strong *ngIf="movieFormGroup.controls['director'].hasError('required')"  class="error">
+                    is required!
+                </strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Image Link</mat-label>
+            <input formControlName="poster" type="text" matInput name="poster" id="poster" placeholder="https://...">
+
+            <mat-error *ngIf="movieFormGroup.controls['poster'].touched && movieFormGroup.controls['poster'].invalid"  class="error">
                 Image Link
-                <strong *ngIf="movieFormGroup.controls['imgUrl'].hasError('required')">
+                <strong *ngIf="movieFormGroup.controls['poster'].hasError('required')"  class="error">
                     is required!
                 </strong>
                 <strong
-                    *ngIf="!movieFormGroup.controls['imgUrl'].hasError('required') && movieFormGroup.controls['imgUrl'].hasError('urlV')">
+                    *ngIf="!movieFormGroup.controls['poster'].hasError('required') && movieFormGroup.controls['poster'].hasError('urlV')"  class="error">
                     must be a valid address!
                 </strong>
             </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
+            <mat-label>Movie Genre</mat-label>
+            <input formControlName="genre" type="text" matInput name="genre" id="genre"
+                placeholder="Action" >
+
+            <mat-error
+                *ngIf="movieFormGroup.controls['genre'].touched && movieFormGroup.controls['genre'].invalid"  class="error">
+                Movie Genre
+                <strong *ngIf="movieFormGroup.controls['genre'].hasError('required')"  class="error">
+                    is required!
+                </strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Movie Release Date</mat-label>
+            <input formControlName="releaseDate" type="text" matInput name="releaseDate" id="releaseDate"
+                placeholder="02 February 2002" >
+
+            <mat-error
+                *ngIf="movieFormGroup.controls['releaseDate'].touched && movieFormGroup.controls['releaseDate'].invalid"  class="error">
+                Movie Release Date
+                <strong *ngIf="movieFormGroup.controls['releaseDate'].hasError('required')"  class="error">
+                    is required!
+                </strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
-            <textarea formControlName="description" type="text" matInput name="description" id="description"
-                placeholder="Basic Omelette">
+            <textarea formControlName="shortStory" type="text" matInput name="shortStory" id="shortStory"
+                placeholder="Short Story">
             </textarea>
             <mat-error
-                *ngIf="movieFormGroup.controls['description'].touched && movieFormGroup.controls['description'].invalid">
+                *ngIf="movieFormGroup.controls['shortStory'].touched && movieFormGroup.controls['shortStory'].invalid"  class="error">
                 Description
-                <strong *ngIf="movieFormGroup.controls['description'].hasError('required')">
+                <strong *ngIf="movieFormGroup.controls['shortStory'].hasError('required')"  class="error">
                     is required!
                 </strong>
                 <strong
-                    *ngIf="!movieFormGroup.controls['description'].hasError('required') && movieFormGroup.controls['description'].hasError('minlength')">
+                    *ngIf="!movieFormGroup.controls['shortStory'].hasError('required') && movieFormGroup.controls['shortStory'].hasError('minlength')"  class="error">
                     must be at least 10 characters!
                 </strong>
             </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <mat-label>Ingredients</mat-label>
-            <textarea formControlName="ingredients" type="text" matInput name="ingredients" id="ingredients"
-                placeholder="ice, 1 lemon, whiskey 50ml, ...">
+            <mat-label>Actors</mat-label>
+            <textarea formControlName="actors" type="text" matInput name="actors" id="actors"
+                placeholder="John Doe, ...">
             </textarea>
             <mat-error
-                *ngIf="movieFormGroup.controls['ingredients'].touched && movieFormGroup.controls['ingredients'].invalid">
-                Ingredients
-                <strong *ngIf="movieFormGroup.controls['ingredients'].hasError('required')">
+                *ngIf="movieFormGroup.controls['actors'].touched && movieFormGroup.controls['actors'].invalid"  class="error">
+                Actors
+                <strong *ngIf="movieFormGroup.controls['actors'].hasError('required')"  class="error">
                     is required!
                 </strong>
                 <strong
-                    *ngIf="!movieFormGroup.controls['ingredients'].hasError('required') && movieFormGroup.controls['ingredients'].hasError('ingredients')">
-                    must be valid! Write ingredients separated with comma and new line!
+                    *ngIf="!movieFormGroup.controls['actors'].hasError('required') && movieFormGroup.controls['actors'].hasError('actors')"  class="error">
+                    must be valid! Write actors separated with comma and new line!
                 </strong>
                 <strong
-                    *ngIf="!movieFormGroup.controls['ingredients'].hasError('required') && movieFormGroup.controls['ingredients'].hasError('ingredientsLength')">
+                    *ngIf="!movieFormGroup.controls['actors'].hasError('required') && movieFormGroup.controls['actors'].hasError('actorsLength')"  class="error">
                     must be at least two!
                 </strong>
             </mat-error>

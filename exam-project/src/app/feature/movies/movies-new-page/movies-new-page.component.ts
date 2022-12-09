@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { IMovie } from 'src/app/core/interfaces';
 import { MessageBusService, MessageType } from 'src/app/core/message-bus.service';
 import { MovieService } from 'src/app/core/movie.service';
-// import { ingredientsValidator, urlValidator } from '../utils';
+import { actorsValidator, urlValidator } from '../utils';
 
 @Component({
   selector: 'app-movies-new-page',
@@ -20,10 +20,13 @@ export class MoviesNewPageComponent implements OnInit {
   formBtnName: string;
 
   movieFormGroup: FormGroup = this.formBuilder.group({
-    // 'recipeName': new FormControl('', [Validators.required, Validators.minLength(3)]),
-    // 'imgUrl': new FormControl('', [Validators.required, urlValidator]),
-    // 'description': new FormControl('', [Validators.required, Validators.minLength(10)]),
-    // 'ingredients': new FormControl('', [Validators.required, ingredientsValidator])
+    'title': new FormControl('', [Validators.required, Validators.minLength(3)]),
+    'director': new FormControl('', [Validators.required]),
+    'genre':new FormControl('', [Validators.required]),
+    'releaseDate':new FormControl('', [Validators.required]),
+    'poster': new FormControl('', [Validators.required, urlValidator]),
+    'shortStory': new FormControl('', [Validators.required, Validators.minLength(10)]),
+    'actors': new FormControl('', [Validators.required, actorsValidator])
   })
 
   constructor(private formBuilder: FormBuilder,
@@ -39,10 +42,13 @@ export class MoviesNewPageComponent implements OnInit {
     if (this.makeUpdate) {
       this.formName = 'Edit Movie';
       this.formBtnName = 'Save';
-    //   this.recipeFormGroup.controls['recipeName'].setValue(this.recipeToUpdate.recipeName);
-    //   this.recipeFormGroup.controls['imgUrl'].setValue(this.recipeToUpdate.imgUrl);
-    //   this.recipeFormGroup.controls['description'].setValue(this.recipeToUpdate.description);
-    //   this.recipeFormGroup.controls['ingredients'].setValue(this.recipeToUpdate.ingredients.join(',\n'));
+      this.movieFormGroup.controls['title'].setValue(this.movieToUpdate.title);
+      this.movieFormGroup.controls['director'].setValue(this.movieToUpdate.director);
+      this.movieFormGroup.controls['genre'].setValue(this.movieToUpdate.genre);
+      this.movieFormGroup.controls['releaseDate'].setValue(this.movieToUpdate.releaseDate);
+      this.movieFormGroup.controls['poster'].setValue(this.movieToUpdate.poster);
+      this.movieFormGroup.controls['shortStory'].setValue(this.movieToUpdate.shortStory);
+      this.movieFormGroup.controls['actors'].setValue(this.movieToUpdate.actors.join(',\n'));
     } else {
       this.formName = 'Add New Movie';
       this.formBtnName = 'Add Movie';
@@ -53,12 +59,15 @@ export class MoviesNewPageComponent implements OnInit {
   handleCreateMovie() {
 
     // Transform ingridients to array
-    // if (this.recipeFormGroup.value.ingredients.includes(',\n')) {
-    //   this.recipeFormGroup.value.ingredients = this.recipeFormGroup.value.ingredients.split(',\n');
-    // }
-    // this.recipeFormGroup.value.recipeName = this.recipeFormGroup.value.recipeName.trim();
-    // this.recipeFormGroup.value.description = this.recipeFormGroup.value.description.trim();
-    // this.recipeFormGroup.value.imgUrl = this.recipeFormGroup.value.imgUrl.trim();
+    if (this.movieFormGroup.value.actors.includes(',\n')) {
+      this.movieFormGroup.value.actors = this.movieFormGroup.value.actors.split(',\n');
+    }
+    this.movieFormGroup.value.title = this.movieFormGroup.value.recipeName.trim();
+    this.movieFormGroup.value.director = this.movieFormGroup.value.description.trim();
+    this.movieFormGroup.value.genre=this.movieFormGroup.value.genre.trim();
+    this.movieFormGroup.value.releaseDate=this.movieFormGroup.value.releaseDate.trim();
+    this.movieFormGroup.value.poster = this.movieFormGroup.value.poster.trim();
+    this.movieFormGroup.value.shortStory=this.movieFormGroup.value.shortStory.trim();
 
     // Editing mode
     if (this.makeUpdate) {
