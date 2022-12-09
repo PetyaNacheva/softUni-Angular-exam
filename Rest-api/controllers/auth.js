@@ -97,25 +97,25 @@ function editProfileInfo(req, res, next) {
     const { _id: userId } = req.user;
     const { username, email } = req.fields;
 
-    const newProfilePicture = req.files.profilePicture;
-    if(newProfilePicture){
-        uploadFile(newProfilePicture).then(id => {
-            console.log(`This is the id ${id}`)
-            const profilePicture = `https://drive.google.com/uc?id=${id}`
-         return   userModel.findOneAndUpdate(
-                { _id: userId }, 
-                { username, email, profilePicture }, 
-                { runValidators: true, new: true })
-        }).then(x => { res.status(200).json(x) })
-        .catch(next);
-    } else {
+    // const newProfilePicture = req.files.profilePicture;
+    // if(newProfilePicture){
+    //     uploadFile(newProfilePicture).then(id => {
+    //         // console.log(`This is the id ${id}`)
+    //         // const profilePicture = `https://drive.google.com/uc?id=${id}`
+    //      return   userModel.findOneAndUpdate(
+    //             { _id: userId }, 
+    //             { username, email, profilePicture }, 
+    //             { runValidators: true, new: true })
+    //     }).then(x => { res.status(200).json(x) })
+    //     .catch(next);
+    // } else {
         userModel.findOneAndUpdate({ _id: userId }, { username, email }, { runValidators: true, new: true })
         .then(x => { res.status(200).json(x) })
          .catch(next);
     }
 
 
-}
+// }
 
 module.exports = {
     login,

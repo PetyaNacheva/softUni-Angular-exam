@@ -12,9 +12,9 @@ export function actorsValidator(control: AbstractControl): ValidationErrors | nu
         if (arr.length > 1) {
             return null;
         }
-        return { ingredientsLength: true };
+        return { actorsLength: true };
     } else {
-        return { ingredients: true };
+        return { actors: true };
     }
 }
 

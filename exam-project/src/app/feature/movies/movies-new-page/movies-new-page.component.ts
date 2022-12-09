@@ -62,8 +62,8 @@ export class MoviesNewPageComponent implements OnInit {
     if (this.movieFormGroup.value.actors.includes(',\n')) {
       this.movieFormGroup.value.actors = this.movieFormGroup.value.actors.split(',\n');
     }
-    this.movieFormGroup.value.title = this.movieFormGroup.value.recipeName.trim();
-    this.movieFormGroup.value.director = this.movieFormGroup.value.description.trim();
+    this.movieFormGroup.value.title = this.movieFormGroup.value.title.trim();
+    this.movieFormGroup.value.director = this.movieFormGroup.value.director.trim();
     this.movieFormGroup.value.genre=this.movieFormGroup.value.genre.trim();
     this.movieFormGroup.value.releaseDate=this.movieFormGroup.value.releaseDate.trim();
     this.movieFormGroup.value.poster = this.movieFormGroup.value.poster.trim();

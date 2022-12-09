@@ -33,18 +33,18 @@ const userSchema = new mongoose.Schema({
             message: props => `${props.value} must contains only latin letters and digits!`
         },
     },
-    photos: [{
+    movies: [{
         type: ObjectId,
-        ref: "Photo"
+        ref: "Movie"
     }],
-    posts: [{
+    comments: [{
         type: ObjectId,
-        ref: "Post"
-    }],
-    profilePicture: {
-        type: String,
-        required: false
-    }
+        ref: 'Comment'
+    }]
+    // profilePicture: {
+    //     type: String,
+    //     required: false
+    // }
 }, { timestamps: { createdAt: 'created_at' } });
 
 userSchema.methods = {
