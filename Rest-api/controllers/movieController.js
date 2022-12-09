@@ -26,25 +26,20 @@ function getMovie(req, res, next) {
 }
 
 function createMovie(req, res, next) {
-    const { title, director, genre, releaseDate, poster, actors, shortStory, likes } = req.body;
+    const { title, director, genre, releaseDate, poster, actors, shortStory } = req.body;
     const { _id: userId } = req.user;
 
-    //const offerPhoto = req.files.offerPhoto;
-    if(poster){
-        uploadFile(poster).then(id => {
-            // console.log(`This is the id ${id}`)
-            const poster = `https://drive.google.com/uc?id=${id}` 
-        return  movieModel.create({ title, director, genre, releaseDate, poster, actors, shortStory, likes, userId })
-        .then(movie =>  res.json(movie))
-        .catch(next);
-        
-        })
-    } else {
-        movieModel.create({ title, director, genre, releaseDate, actors, shortStory, likes, userId })
-        .then(movie =>  res.json(movie))
-        .catch(next);
-    }
 
+
+
+    movieModel.create({title, director, genre, releaseDate, poster, actors, shortStory, userId, likes: [] })
+        .then(movie => {
+            Promise.all([
+                userModel.updateOne({ _id: userId }, { $push: { movies: movie._id } }),
+            ]);
+            res.status(200).json(movie);
+        })
+        .catch(next);
 
 
 
