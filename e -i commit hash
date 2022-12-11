@@ -1,0 +1,83 @@
+[33mcommit df87477550e205958e6d2200a21c283c03b07e1a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Sun Dec 11 22:56:23 2022 +0200
+
+    staged
+
+[33mcommit a27906bbfc6c0691330fc923819848f24d3fd1dc[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Sun Dec 11 22:53:21 2022 +0200
+
+    git ignored
+
+[33mcommit 70fa0284f4b025d5881b53636f3b3a8787406187[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Sun Dec 11 22:51:39 2022 +0200
+
+    git ignored
+
+[33mcommit d00064bc274a10736f9105b5670f7d2786925619[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Sun Dec 11 22:50:04 2022 +0200
+
+    git ignore
+
+[33mcommit 5194b40f47bea35690ae8b399186cb342a1d65d3[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Sun Dec 11 22:44:26 2022 +0200
+
+    refactoring
+
+[33mcommit 92d45b1b5dfe66b03934fd0fbf7eb57b84cd2baa[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Fri Dec 9 21:44:39 2022 +0200
+
+    add movie
+
+[33mcommit c7da0fd280062053ea10560c725bc3d0e44adf03[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Fri Dec 9 21:44:09 2022 +0200
+
+    add movie
+
+[33mcommit 39367487ab2c9b9d6801b4c997d6884f18df693e[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Fri Dec 9 20:04:02 2022 +0200
+
+    add
+
+[33mcommit d980b1c4de2ed33c7f1da6ac65a0bd806d849521[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Fri Dec 9 20:03:48 2022 +0200
+
+    add movie
+
+[33mcommit 805186fd6fdcb4f2c9f7709f020cb6f2a36af8f1[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Thu Dec 8 22:05:23 2022 +0200
+
+    home
+
+[33mcommit d3df349f09e099929ecac85f64b664f9fa5684ed[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Wed Dec 7 20:39:26 2022 +0200
+
+    forms
+
+[33mcommit d13213dba7fd15a946b7411b3d72774d3e25671f[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Sun Dec 4 23:09:07 2022 +0200
+
+    error page and about page
+
+[33mcommit e36325558fb759f391331bbdd08a27ff0dec5b52[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Sun Dec 4 22:12:24 2022 +0200
+
+    login and register
+
+[33mcommit 6e9f2830a43dab85e8d829b0dd97700241fe56ea[m
+Author: Petya Nacheva <pepisn@abv.bg>
+Date:   Sun Dec 4 21:37:24 2022 +0200
+
+    initial commit
