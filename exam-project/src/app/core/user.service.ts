@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Observable, tap } from 'rxjs';
+
 import { environment } from 'src/environments/environment';
 import { IUser } from './interfaces';
 import { StorageService } from './storage.service';
@@ -28,11 +28,10 @@ export class UserService {
     formData.set('username', newUser.username)
     formData.set('email', newUser.email)
 
-    if(newUser.profilePicture){
-      formData.append('profilePicture', newUser.profilePicture)
-    }
+    // if(newUser.profilePicture){
+    //   formData.append('profilePicture', newUser.profilePicture)
+    // }
     
     return this.httpClient.put<IUser>(`${environment.apiUrl}/users/profile`, formData, {withCredentials: true})
   }
 }
-

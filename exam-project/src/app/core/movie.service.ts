@@ -11,6 +11,7 @@ export interface CreateMovieDto {
   title: string, director: string, genre: string, releaseDate: string, poster: string, actors: string[], shortStory: string
 }
 
+
 @Injectable()
 export class MovieService {
 
@@ -57,6 +58,9 @@ export class MovieService {
     return this.http.put<IMovie>(`${apiUrl}/movies/${movieId}/like`, {}, { withCredentials: true });
   }
 
+  commentMovie(comment: string, movieId: string): Observable<IMovie> {
+    return this.http.put<IMovie>(`${apiUrl}/movies/${movieId}/comments`, {}, { withCredentials: true });
+  }
   dislikeMovie(movieId: string): Observable<IMovie> {
     return this.http.put<IMovie>(`${apiUrl}/movies/${movieId}/dislike`, {}, { withCredentials: true });
   }

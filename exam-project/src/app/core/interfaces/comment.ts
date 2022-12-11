@@ -6,5 +6,5 @@ export interface IComment extends IBase {
   likes: string[];
   text: string;
   userId: IUser;
-  recipeId: IMovie;
+  movieId: IMovie;
 }

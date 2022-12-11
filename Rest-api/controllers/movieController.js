@@ -1,13 +1,24 @@
-const { movieModel, userModel} = require('../models');
-const { uploadFile } = require('../utils/disk');
+const { movieModel, userModel, commentModel } = require('../models');
+// const { uploadFile } = require('../utils/disk');
+const { newComment } = require('./commentController');
 // const { newPost } = require('./postController')
 
 function getMovies(req, res, next) {
     const title = req.query.title || '';
-    movieModel.find({title: {$regex: title, $options: 'i'}})
-        .populate('userId')
-        .then(movies => res.json(movies))
+
+    movieModel.find({ title: { $regex: title, $options: 'i' } })
+        .sort({ 'created_at': -1 })
+        .populate({
+            path: 'userId',
+            select: ['email', 'username'],
+        })
+        .then(recipes => res.json(recipes))
         .catch(next);
+
+    // movieModel.find({title: {$regex: title, $options: 'i'}})
+    //     .populate('userId')
+    //     .then(movies => res.json(movies))
+    //     .catch(next);
 }
 
 
@@ -15,10 +26,15 @@ function getMovie(req, res, next) {
     const { movieId } = req.params;
 
     movieModel.findById(movieId)
+    .populate({
+        path: 'userId',
+        select: ['email', 'username'],
+    })
         .populate({
             path : 'comments',
             populate : {
-              path : 'userId'
+              path : 'userId',
+              select: ['email', 'username']
             }
           })
         .then(movie => res.json(movie))
@@ -28,9 +44,6 @@ function getMovie(req, res, next) {
 function createMovie(req, res, next) {
     const { title, director, genre, releaseDate, poster, actors, shortStory } = req.body;
     const { _id: userId } = req.user;
-
-
-
 
     movieModel.create({title, director, genre, releaseDate, poster, actors, shortStory, userId, likes: [] })
         .then(movie => {
@@ -50,7 +63,7 @@ function getMoviesByLikes(req, res, next) {
         .limit(3)
         .populate({
             path: 'userId',
-            
+            select: ['email', 'username'],
         })
         .then(movies => res.json(movies))
         .catch(next);
@@ -62,7 +75,7 @@ function getMoviesByComments(req, res, next) {
         .limit(3)
         .populate({
             path: 'userId',
-           
+            select: ['email', 'username'],
         })
         .then(movies => res.json(movies))
         .catch(next);
@@ -119,7 +132,7 @@ function dislikeMovie(req, res, next) {
 
 function editMovie(req, res, next) {
     const { movieId } = req.params;
-    const { title, director, genre, releaseDate, poster, actors, shortStory, likes, userId } = req.body;
+    const { title, director, genre, releaseDate, poster, actors, shortStory } = req.body;
 
     movieModel.findOneAndUpdate({ _id: movieId }, {
         title, director, genre, releaseDate, poster, actors, shortStory, 

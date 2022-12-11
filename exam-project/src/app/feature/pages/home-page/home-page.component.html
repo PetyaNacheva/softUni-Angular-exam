@@ -1,10 +1,11 @@
 <div class="welcome">
     <app-welcome></app-welcome>
 </div>
+<div class="container">
 
-<h3>Most Liked Movie:</h3>
 
 <div class="card-container" *ngIf="movieMostLiked">
+    <h3 class="title">Most Liked Movie:</h3>
     <div class="card u-clearfix">
         <div class="card-body">
             <span class="card-number subtle"><i class="fas fa-trophy fa-lg winner"></i></span>
@@ -14,16 +15,17 @@
                     {{movieMostLiked.userId.username}}</p>
                 <p class="card-description subtle"><i class="fa fa-thumbs-up icons"></i> Likes:
                     {{movieMostLiked.likes.length}}</p>
+                    <img src="{{movieMostLiked.poster}}" alt="" class="card-media" />
             </div>
-            <div class="card-read" [routerLink]="['/movies', movieMostLiked._id]">Details</div>
+            <button class="btn" [routerLink]="['/movies', movieMostLiked._id]">Details</button>
         </div>
-        <img src="{{movieMostLiked.poster}}" alt="image" class="card-media" />
     </div>
 </div>
 
-<h3>Most Commented Movie:</h3>
+
 
 <div class="card-container" *ngIf="movieMostCommented">
+    <h3 class="title">Most Commented Movie:</h3>
     <div class="card u-clearfix">
         <div class="card-body">
             <span class="card-number subtle"><i class="fas fa-trophy fa-lg winner"></i></span>
@@ -33,9 +35,11 @@
                     {{movieMostCommented.userId.username}}</p>
                 <p class="card-description subtle"><i class="fa fa-thumbs-up icons"></i> Comments:
                     {{movieMostCommented.comments.length}}</p>
+                    <img src="{{movieMostCommented.poster}}" alt="" class="card-media" />
             </div>
-            <div class="card-read" [routerLink]="['/movies', movieMostCommented._id]">Details</div>
+            <button class="btn" [routerLink]="['/movies', movieMostCommented._id]">Details</button>
         </div>
-        <img src="{{movieMostCommented.poster}}" alt="image" class="card-media" />
+       
     </div>
+</div>
 </div>

@@ -37,14 +37,15 @@ const userSchema = new mongoose.Schema({
         type: ObjectId,
         ref: "Movie"
     }],
+    // likes: [{
+    //     type: ObjectId,
+    //     ref: 'Movie'
+    // }],
     comments: [{
         type: ObjectId,
         ref: 'Comment'
     }]
-    // profilePicture: {
-    //     type: String,
-    //     required: false
-    // }
+    
 }, { timestamps: { createdAt: 'created_at' } });
 
 userSchema.methods = {

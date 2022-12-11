@@ -1,7 +1,12 @@
+/* @import url('https://use.fontawesome.com/releases/v6.0.0/css/all.css'); */
 .templatemo-detail{
     background-color: #EBF5FE;
     /* width: 80%; */
+    text-align: center;
     margin: auto;
+}
+.content{
+    border-radius: 50px;
 }
 
 .about-detail{
@@ -26,12 +31,20 @@ h1{
     font-style: italic;
 }
 
+.btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
 button{
     margin: 0 5px;
 }
 
 .buttons {
-    display: -webkit-inline-box;
+    display: flex;
+    flex-direction: column;
+    /* display: -webkit-inline-box; */
 }
 
 .btnlike {
@@ -45,4 +58,15 @@ button{
 .hint {
     margin: auto;
     color: #4E749B;
+}
+.containter{
+    display: flex;
+    flex-direction: column;
+}
+.btnlike{
+    margin-bottom: 10px;
+}
+
+.comment{
+    border-top: 1px dotted darkslategray;
 }

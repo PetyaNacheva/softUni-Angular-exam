@@ -2,25 +2,27 @@
     <div class="container">
         <div class="row">
             <div>
-                <form *ngIf="(isLoggedIn$ | async)">
-                    <fieldset>
+                <form class="form" *ngIf="(isLoggedIn$ | async)">
+                        
                         <legend>New Comment</legend>
-                        <div class="row">
-                            <div class="form-group col-xs-12 col-sm-12 col-lg-10">
+                        <div class="commentForm">
+                            <div class="form-group">
                                 <textarea #comment class="form-control" id="message" placeholder="Your message"
                                     required=""></textarea>
-                            </div>
+                            
                         </div>
-                    </fieldset>
+                    </div>
                     <div class="btn">
                         <button type="reset" (click)="submitComment(comment.value)" class="btn btn-primary">Submit
                             Comment</button>
                     </div>
+                
                 </form>
 
                 <!-- if there are no comments: -->
-                <ng-container *ngIf="comments.length == 0">
-                    <h3><i class="far fa-comment icons"></i> 0 Comments</h3>
+                <ng-container *ngIf="comments.length === 0">
+                    <h3><i class="fa-regular fa-comment"></i>
+                        0 Comments</h3>
                     <p *ngIf="!(isLoggedIn$ | async)" class="userLogin">
                         Write the first one!
                         <a routerLink="/user/login" class="link-primary">Login</a>

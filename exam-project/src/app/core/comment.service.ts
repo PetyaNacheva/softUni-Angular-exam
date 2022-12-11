@@ -23,4 +23,6 @@ export class CommentService {
   dislikeComment(movieId: string, commentId: string): Observable<{ message: string }> {
     return this.http.post<{ message: string }>(`${apiUrl}/movies/${movieId}/comments/${commentId}/dislike`, {}, { withCredentials: true });
   }
+
+
 }

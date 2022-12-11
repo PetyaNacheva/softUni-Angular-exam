@@ -1,26 +1,27 @@
+<div class="list-page">
 <form class="form">
     <div class="parent">
-
         <mat-form-field appearance="outline">
-            <mat-label>Search by movie name</mat-label>
-            <input [formControl]="searchControl" type="text" matInput name="recipeName" id="recipeName"
+            <mat-label >Search by movie name</mat-label>
+            <input [formControl]="searchControl" type="text" matInput name="movieTitle" id="movieTitle"
                 placeholder="long island">
         </mat-form-field>
-        <button class="btn btn-primary">Search</button>
+        <button class="search">Search</button>
     </div>
 </form>
 
 <div *ngIf="movieList && movieList.length !== 0" id="portfolio-content" class="center-text">
-    <h3>Latest Movies:</h3>
+    <h3 class="title">Latest Movies:</h3>
     <div class="portfolio-page" id="page-1">
-        <app-recipes-list-item *ngFor="let recipe of movieList" [recipe]="recipe"></app-recipes-list-item>
+        <app-movies-list-item *ngFor="let movie of movieList" [movie]="movie"></app-movies-list-item>
     </div>
 </div>
 
 <div *ngIf="movieList && movieList.length === 0" id="portfolio-content" class="center-text">
-    <h3 class="portfolio-page" id="page-1">No Movies Found!</h3>
+    <h3 class="title" id="page-1">No Movies Found!</h3>
 </div>
 
 <div *ngIf="!movieList">
     Loading&hellip;
+</div>
 </div>

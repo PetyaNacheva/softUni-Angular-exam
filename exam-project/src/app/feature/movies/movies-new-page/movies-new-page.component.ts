@@ -71,8 +71,7 @@ export class MoviesNewPageComponent implements OnInit {
 
     // Editing mode
     if (this.makeUpdate) {
-      // console.log('update');
-      // console.log(this.recipeFormGroup.value);
+     
 
       this.movieService.updateMovie$(this.movieToUpdate._id, this.movieFormGroup.value).subscribe({
         next: movie => {

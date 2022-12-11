@@ -1,7 +1,7 @@
 /* welcome component */
 
 .welcome {
-    
+    min-height: 55vh;
     padding: 0.3em 0.5em;
     border: 1px solid #999;
     border-radius: 0.3em;

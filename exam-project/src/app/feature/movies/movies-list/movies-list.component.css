@@ -1,3 +1,6 @@
+.list-page{
+  min-height: 75vh;
+}
 h3 {
     color: #104C88;
     font-weight: 600;
@@ -8,29 +11,68 @@ h3 {
     border-radius: 20px 60px;
     width: 100%;
   }
+  #movieTitle{
+    /* height: 10px; */
+  }
+  .search{
+      background-color: #75B1ED;
+      padding: 20px;
+      margin-top: 10px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    
+  }
   
+  .title{
+    width: 200px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color:  rgb(47, 102, 99); 
+   color: yellow;
+  }
+
   .parent{
+    min-width: 500px;
+    margin: 50px auto;
+    padding-top: 20px;
+    background-color: #ebf5fe;
+    width:600px;
+    border-radius: 50px;
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+   text-align: center;
+    width: 100%;
+  }
+ 
+  
+
+
+  
+  /* .parent{
     display: flex;
     /* display: inline-block; */
-    width: 100%;
+    /* width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     /* flex-direction: column; */
-    background-color: #ebf5fe;
+    /* background-color: #ebf5fe;
     padding-top: 20px;
-    border-radius: 35px 150px;
-  }
+    border-radius: 35px 150px; */
+  /* }  */
   
-  .form{
+  /* .form{
     margin-top: 20px;
     padding-bottom: 10px;
-  }
+  } */
   
-  mat-form-field{
+  /* mat-form-field{
     width: 40%;
     padding-right: 10px;
   }
-  
+   */
   button {
     margin-bottom: 20px;
     padding: 12px;

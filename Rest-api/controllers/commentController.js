@@ -1,9 +1,11 @@
 const { userModel, movieModel, commentModel } = require('../models');
 
-function newComment(text, userId, recipeId) {
-    return commentModel.create({ text, userId, recipeId })
+function newComment(text, userId, movieId) {
+    return commentModel.create({ text, userId, movieId })
         .then(comment => {
+            
             return Promise.all([
+                
                 userModel.updateOne({ _id: userId }, { $push: { comments: comment._id } }),
                 movieModel.findByIdAndUpdate({ _id: movieId }, { $push: { comments: comment._id } }, { new: true })
             ]);
@@ -15,7 +17,7 @@ function createComment(req, res, next) {
     const { _id: userId } = req.user;
     const { text } = req.body;
     newComment(text, userId, movieId)
-        .then(([_, updateMovie]) => res.status(200).json(updateMovie))
+        .then(([_, updatedMovie]) => res.status(200).json(updatedMovie))
         .catch(next);
 }
 

@@ -14,7 +14,7 @@ const movieSchema = new mongoose.Schema({
     },
     genre: {
         type: String,
-        required: true,
+        required: [true, 'Genre is required'],
     },
     releaseDate:{
         type: String,
@@ -22,13 +22,13 @@ const movieSchema = new mongoose.Schema({
     },
     poster: {
         type: String,
-
+        required: true
     },
   
-    actors: [{
-        type: String,
+    actors: {
+        type: Array,
         required: true
-    }],
+    },
     shortStory: {
         type: String,
         required: true

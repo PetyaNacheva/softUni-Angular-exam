@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import {  map, mergeMap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable, map, mergeMap } from 'rxjs';
+// import {  map, mergeMap } from 'rxjs/operators';
 import { AuthService } from 'src/app/auth.service';
 import { IMovie, IUser } from 'src/app/core/interfaces';
 import { MessageBusService, MessageType } from 'src/app/core/message-bus.service';
 import { MovieService } from 'src/app/core/movie.service';
+import { UserService } from 'src/app/core/user.service';
+
 
 @Component({
   selector: 'app-movies-detail-page',
@@ -43,10 +45,12 @@ export class MoviesDetailPageComponent implements OnInit {
       this.authService.currentUser$
     ])
       .subscribe(([movie, user]) => {
+      
         this.currentUser = user;
         this.movie = movie;
         this.canLike = user && !this.movie.likes.includes(user?._id);
-        this.isUserAuthor = user && this.movie.userId._id == user._id;
+      
+        this.isUserAuthor = user && user.movies.includes(movie._id);
       })
 
   }

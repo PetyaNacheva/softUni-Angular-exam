@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { map, tap } from 'rxjs/operators';
-import { Observable} from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { CommentService } from 'src/app/core/comment.service';
+// import { Comments } from '../models/';
 import { IComment, IMovie, IUser } from 'src/app/core/interfaces';
 import { MessageBusService, MessageType } from 'src/app/core/message-bus.service';
 import { MovieService } from 'src/app/core/movie.service';
@@ -18,6 +18,7 @@ export class MoviesNewCommentComponent implements OnInit {
   @Input() movieId: string;
   @Input() movie: IMovie;
 
+  // comments:Observable<Comment[]>;
   comments: any[] = [];
   canLikeComment: boolean;
 
@@ -36,6 +37,7 @@ export class MoviesNewCommentComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.loadMovieById(this.movieId).subscribe(movie => {
       this.comments = movie.comments;
+      // console.log(movie.comments)
 
       // get user and check if user._id includes in each comment likes array
       this.comments.forEach(c => {
@@ -51,8 +53,29 @@ export class MoviesNewCommentComponent implements OnInit {
 
   submitComment(text: string): void {
     // console.log(text);
+    // console.log(this.movieId)
+    // this.movieService.commentMovie(text, this.movieId).subscribe({
+      
+    //   next: (comment) => {
+    //     this.router.navigateByUrl(`/RefreshComponent`, { skipLocationChange: true }).then(() => {
+    //       this.router.navigate(['/movies', this.movieId]);
+    //     });
+    //     this.messageBus.notifyForMessage({
+    //       text: 'User successfully add new comment!',
+    //       type: MessageType.Success
+    //     })
+    //   },
+    //   error: (error) => {
+    //     console.error(error);
+      
+    //   }
+    // })
+
+    // let comments:Comment = new Comment;
     this.commentService.addComment$(text, this.movieId).subscribe({
+     
       next: (comment) => {
+        debugger;
         // console.log('returned comment: ', comment);
 
         this.router.navigateByUrl(`/RefreshComponent`, { skipLocationChange: true }).then(() => {

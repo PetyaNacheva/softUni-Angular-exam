@@ -1,3 +1,17 @@
+.card-group{
+    border: 5px solid cadetblue;
+    border-radius: 5px;
+    padding: 20px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+}
+.img{
+    width: 300px;
+    height: 300px;
+    margin-right: 30px;
+}
+
 h3 {
     /* padding: 0; */
     margin-top: 10px;
@@ -14,13 +28,18 @@ strong {
     color: #FF8E00;
 }
 
-button {
-    margin-top: 0.5rem;
-    color:  #0a335b;
-    padding: 0px;
-    text-transform: uppercase;
-}
 
+
+.btn{
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.strong{
+    text-decoration: none;
+}
 .icons {
     color:  #104C88;
 }

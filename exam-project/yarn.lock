@@ -111,10 +111,10 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/cdk@15.0.1":
-  "integrity" "sha512-yV/nietivRC8JJrEt0M3RXo+4PMk8cReZVhbV0ME6MOehJ7NBw7uIBjfIbLWE9YGEHZi+TCzdxqDuWqH5RCiog=="
-  "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-15.0.1.tgz"
-  "version" "15.0.1"
+"@angular/cdk@15.0.2":
+  "integrity" "sha512-khTZT/vWDLoCkIxXyrpmeFIMfsED3KdKQqWCiuvUHGHhJn5iOa2wDQXQEkrFpNaQ4v1mbHE2I11DljiieIyv5w=="
+  "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-15.0.2.tgz"
+  "version" "15.0.2"
   dependencies:
     "tslib" "^2.3.0"
   optionalDependencies:
@@ -164,10 +164,10 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/material@^15.0.1":
-  "integrity" "sha512-JXMcRf27HgXwjoNOKD04YubJ14M9Y66g5Ol4R5EDShnwvvzU1OKLjaYN3SYpH5iMauZztjljsVBsLlO8n/TVFA=="
-  "resolved" "https://registry.npmjs.org/@angular/material/-/material-15.0.1.tgz"
-  "version" "15.0.1"
+"@angular/material@^15.0.2":
+  "integrity" "sha512-jXjgKFK09DcqShXSvKJLQ98MSqV2LuBO6ZuJj/gz96ZWoAhTTuWn0hL3xsoKp+kaF5DPdDFd24gLr8YFRibaIQ=="
+  "resolved" "https://registry.npmjs.org/@angular/material/-/material-15.0.2.tgz"
+  "version" "15.0.2"
   dependencies:
     "@material/animation" "15.0.0-canary.7971d6ad5.0"
     "@material/auto-init" "15.0.0-canary.7971d6ad5.0"
@@ -2537,6 +2537,11 @@
   "resolved" "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   "version" "1.0.0"
 
+"bootstrap-icons@^1.10.2":
+  "integrity" "sha512-PTPYadRn1AMGr+QTSxe4ZCc+Wzv9DGZxbi3lNse/dajqV31n2/wl/7NX78ZpkvFgRNmH4ogdIQPQmxAfhEV6nA=="
+  "resolved" "https://registry.npmjs.org/bootstrap-icons/-/bootstrap-icons-1.10.2.tgz"
+  "version" "1.10.2"
+
 "brace-expansion@^1.1.7":
   "integrity" "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="
   "resolved" "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz"
@@ -3356,6 +3361,11 @@
   "integrity" "sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
   "version" "1.15.2"
+
+"font-awesome@^4.7.0":
+  "integrity" "sha512-U6kGnykA/6bFmg1M/oT9EkFeIYv7JlX3bozwQJWiiLz6L0w3F5vBVPxHlwyX/vtNq1ckcpRKOB9f2Qal/VtFpg=="
+  "resolved" "https://registry.npmjs.org/font-awesome/-/font-awesome-4.7.0.tgz"
+  "version" "4.7.0"
 
 "forwarded@0.2.0":
   "integrity" "sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow=="

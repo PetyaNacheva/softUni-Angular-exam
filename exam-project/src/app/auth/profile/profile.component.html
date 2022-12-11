@@ -11,8 +11,27 @@
                 <p>Email: </p>
                 <p>{{currentUser.email}}</p>
             </div>
+            <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                <div class="numbers"> <span class="articles">Movies: </span> <span
+                        class="number1">{{currentUser.movies.length}}</span> </div>
+                <div class="numbers"> <span class="followers">Comments: </span> <span
+                        class="number2">{{currentUser.comments.length}}</span> </div>
+            </div>
             
             <button (click)="enterEditMode(currentUser)" class="edit-button">Edit</button>
+            <button *ngIf="!isShowMovies" (click)="showUserMovies(currentUser, 'show')"
+                                class="btn btn-sm btn-primary w-100 ml-2">
+                                My movies</button>
+                            <button *ngIf="isShowMovies" (click)="showUserMovies(currentUser, 'hide')"
+                                class="btn btn-sm btn-primary w-100 ml-2">
+                                Hide movies</button>
+                                <button *ngIf="!isLikedShow" (click)="showLikedByUserMovies(currentUser, 'show')"
+                                class="btn btn-sm btn-primary w-100 ml-2">
+                                Liked movies</button>
+                            <button *ngIf="isLikedShow" (click)="showLikedByUserMovies(currentUser, 'hide')"
+                                class="btn btn-sm btn-primary w-100 ml-2">
+                                Hide movies</button>
+
         </ng-container>
 
         <ng-container *ngIf="isInEditMode$ | async">
@@ -25,9 +44,16 @@
                     <p>Email: </p>
                     <input #email="ngModel" [class.input-error]="email.touched && email.invalid" type="email" name="email" id="email" ngModel required emailValidator value="john.doe@gmail.com">
                 </div>
-                <div class="flex">
+                
+                <!-- <div class="flex">
                     <p>Profile picture: </p>
                     <input type="file" accept="image/png" id="profile-picture" (change)="handleProfilePictureChange($event)">
+                </div> -->
+                <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                    <div class="numbers"> <span class="articles">Movies: </span> <span
+                            class="number1">{{currentUser.movies.length}}</span> </div>
+                    <div class="numbers"> <span class="followers">Comments: </span> <span
+                            class="number2">{{currentUser.comments.length}}</span> </div>
                 </div>
                 <button type="button" (click)="exitEditMode()"  class="red-button">Cancel</button>
                 <button   [disabled]="editProfileForm.invalid" class="green-button">Save</button>

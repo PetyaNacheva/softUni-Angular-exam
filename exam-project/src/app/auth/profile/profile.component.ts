@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
 
   currentUser$: Observable<IUser> = this.store.select(state => state.auth.profile.currentProfile)
 
-  newProfilePicture?: File
+  // newProfilePicture?: File
 
   isInEditMode$: Observable<boolean> = this.store.select(state => state.auth.profile.isInEditMode);
 
@@ -101,7 +101,7 @@ export class ProfileComponent implements OnInit {
       user: {
         username: this.editProfileForm.value.username,
         email: this.editProfileForm.value.email,
-        profilePicture: this.newProfilePicture
+        // profilePicture: this.newProfilePicture
       }
       
     }));
@@ -114,12 +114,12 @@ export class ProfileComponent implements OnInit {
 
   handleProfilePictureChange(event: InputEvent){
     const input: HTMLInputElement = event.target as HTMLInputElement;
-    this.newProfilePicture = input.files[0]
-    console.log(this.newProfilePicture)
+    // this.newProfilePicture = input.files[0]
+    // console.log(this.newProfilePicture)
 
   }
 
-  showLikedByUseMovies(currentUser: IUser, action: string) {
+  showLikedByUserMovies(currentUser: IUser, action: string) {
     if (action == 'show') {
       this.movieService.getAllLikedByUser$(currentUser._id).subscribe({
         next: (movies) => {

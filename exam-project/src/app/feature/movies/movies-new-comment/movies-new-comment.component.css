@@ -1,3 +1,5 @@
+@import url('https://use.fontawesome.com/releases/v6.0.0/css/all.css');
+
 body {
     margin-top: 20px;
 }
@@ -80,21 +82,14 @@ body {
     /* margin-top: 7px; */
 }
 
-#comments form fieldset {
-    float:  none;
-    margin: auto;
-    clear: left;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
 
 legend {
     background-color: #75B1ED;
     color: #fff;
-    padding: 3px 6px;
+    padding: 5px 10px;
     width: auto;
     margin-left: calc(50%);
+    margin-bottom: 20px;
     transform: translateX(-50%);
 }
 
@@ -204,4 +199,38 @@ span{
 
 .userLogin a{
     padding-left: 10px;
+}
+#comments{
+    background-color: #EBF5FE;
+    border-radius: 5px;
+}
+#message{
+   
+    width: 400px;
+}
+.btn{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.field{
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+   /* margin: auto; */
+}
+.form-group{
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+.commentForm{
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 150px;
+    width: 430px;
+    margin: auto;
 }
