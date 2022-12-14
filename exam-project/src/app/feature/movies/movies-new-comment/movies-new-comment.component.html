@@ -20,7 +20,7 @@
                 </form>
 
                 <!-- if there are no comments: -->
-                <ng-container *ngIf="comments.length === 0">
+                <ng-container *ngIf="comments.length == 0">
                     <h3><i class="fa-regular fa-comment"></i>
                         0 Comments</h3>
                     <p *ngIf="!(isLoggedIn$ | async)" class="userLogin">
@@ -29,15 +29,15 @@
                     </p>
                 </ng-container>
 
-                <ng-container *ngIf="comments && comments.length != 0">
-                    <h3><i class="far fa-comment icons"></i> {{recipe.comments.length}} Comments</h3>
+                <ng-container  *ngIf="comments && comments.length != 0">
+                    <h3><i class="far fa-comment icons"></i> {{movie.comments.length}} Comments</h3>
 
                     <!-- COMMENT 1 - START -->
                     <div class="media" *ngFor="let comment of comments">
                         <div class="media-body">
-                            <h4 class="media-heading">{{comment.userId.username}} <i class="far fa-comment icons"></i>
+                            <h4 class="media-heading">Author: {{comment.userId.username}} <i class="far fa-comment icons"></i>
                             </h4>
-                            <p><span>Comment: </span>{{comment.text}}</p>
+                            <p class="comment-text"><span>Comment: </span>{{comment.text}}</p>
                             <div class="one-line">
                                 <ul class="list-unstyled list-inline media-detail pull-left">
                                     <li><i class="fa fa-calendar"></i>{{(comment.created_at | date: 'medium')}}</li>
