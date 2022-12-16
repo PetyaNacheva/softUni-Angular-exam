@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { IMovie } from 'src/app/core/interfaces';
 import { MovieService } from 'src/app/core/movie.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home-page',
@@ -9,20 +10,32 @@ import { MovieService } from 'src/app/core/movie.service';
 })
 export class HomePageComponent implements OnInit {
 
-  movieList: IMovie[] = [];
+  mostLikedList: IMovie[];
+  mostCommentList: IMovie[];
   movieMostLiked: IMovie;
   movieMostCommented: IMovie;
+
+  likedList: Subscription;
+  commentedList : Subscription;
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.movieService.loadMostLiked$().subscribe(movieList => {
-      this.movieMostLiked = movieList[0];
-      // console.log('liked:',recipeList)
-    });
-    this.movieService.loadMostComment$().subscribe(movieList => {
-      this.movieMostCommented = movieList[0];
-      // console.log('commented:',recipeList)
-    });
+    
+      this.likedList = this.movieService.loadMovieList().subscribe((data)=>{
+        // console.log(data);
+        this.mostLikedList = data.sort((a,b)=> b.likes.length - a.likes.length)
+        this.movieMostLiked = this.mostLikedList[0];
+
+      });
+
+      this.commentedList = this.movieService.loadMovieList().subscribe((comment)=>{
+        // console.log(comment);
+        this.mostCommentList = comment.sort((a,b)=> b.comments.length - a.comments.length)
+        this.movieMostCommented = this.mostCommentList[0];
+
+      });
+   
+  
   }
 
 }
