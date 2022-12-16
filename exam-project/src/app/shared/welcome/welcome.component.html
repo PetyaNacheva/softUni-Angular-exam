@@ -1,10 +1,20 @@
 <div class="welcome">
     <h3>Welcome!</h3>
     <p>
-        This is a place, where you can post your recipes, make comments and learn new recipes.
-        You can also give a like to recipes and comments.
-        Hurry up to create your profile and create the most liked recipe or the most commented.
+        This is a place, where you can post your movies, make comments and find new movies.
+        You can also give a like to movies and comments.
+        Hurry up to create your profile and upload the most liked movies or the most commented.
         Good luck and have fun. <i class="far fa-smile-wink"></i>
     </p>
+    <div class="logged" *ngIf="!isLoggedIn">
+        <ul>
+            <li>
+                <a routerLink="/user/login">Login</a>
+            </li>
+            <li>
+                <a routerLink="/user/register">Register</a>
+            </li>
+        </ul>
+    </div>
         <img src="../../../assets/theater3.jpg" alt="">
-</div>   
+</div> 
