@@ -81,7 +81,7 @@ export class ProfileComponent implements OnInit {
       // console.log(this.currentUser._id)
       this.movieService.getAllMoviesByUser$(currentUser._id).subscribe({
         next: (movies) => {
-          // console.log(recipes)
+          
           this.userMovies = movies;
           this.isShowMovies = !this.isShowMovies;
           this.isDisabled = !this.isDisabled;
