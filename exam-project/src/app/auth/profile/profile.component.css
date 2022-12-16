@@ -4,7 +4,7 @@
 }
 
 .profile {
-    min-height: 52vh;
+    min-height: 55vh;
     width: 100%;
     max-width: 500px;
     margin: 70px auto;
@@ -83,4 +83,17 @@
 
 .input-error {
     border-left: 3px solid red;
+}
+.container-movie{
+   background-color: #EBF5FE;
+   width: 70%;
+   margin: auto;
+   border-radius: 5px;
+   padding-top: 10px;
+}
+.info-movies{
+    border-top: 1px dotted darkslategrey;
+    border-bottom: 1px dotted darkslategrey;
+    padding: 10px 0px;
+margin: 10px 0px;
 }
