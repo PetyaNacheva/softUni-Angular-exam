@@ -114,8 +114,7 @@ export class ProfileComponent implements OnInit {
 
   handleProfilePictureChange(event: InputEvent){
     const input: HTMLInputElement = event.target as HTMLInputElement;
-    // this.newProfilePicture = input.files[0]
-    // console.log(this.newProfilePicture)
+    
 
   }
 
@@ -123,7 +122,7 @@ export class ProfileComponent implements OnInit {
     if (action == 'show') {
       this.movieService.getAllLikedByUser$(currentUser._id).subscribe({
         next: (movies) => {
-          console.log(movies)
+          
           this.likedMovies = movies;
           this.isLikedShow = !this.isLikedShow;
           this.isDisabled = !this.isDisabled;
